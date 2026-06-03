@@ -262,7 +262,7 @@ export default function Contact() {
         </motion.div>
 
       </div>
-      <div className="w-full max-w-7xl mx-auto h-[2px] bg-gradient-to-r from-transparent via-[#8A2C1D]/60 to-transparent mt-16 z-20" />
+      <div className="w-full  mx-auto h-[2px] bg-gradient-to-r from-transparent via-[#8A2C1D]/60 to-transparent mt-16 z-20" />
       <div className="flex justify-between items-center container mx-auto mt-4">
         <motion.p
           initial={{ opacity: 0 }}
@@ -278,7 +278,7 @@ export default function Contact() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="text-[10px] sm:text-xs font-body text-vintage-beige/60 leading-relaxed uppercase tracking-[0.16em] drop-shadow-md"
+          className="text-[10px] sm:text-xs font-body text-vintage-beige/60 leading-relaxed uppercase tracking-[0.16em] drop-shadow-md text-end"
         >
          Online Presence Powered By <a href="https://samhub.in" target="_blank" rel="noopenner" className="hover: underline underline-offset-8 decoration-dessert-orange">Samhub Innovations</a>
         </motion.p>
