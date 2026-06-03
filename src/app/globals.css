@@ -38,14 +38,18 @@
   --animate-slow-pan: slow-pan 25s linear infinite;
 
   @keyframes dust-float {
-    0%, 100% {
+
+    0%,
+    100% {
       transform: translateY(0) translateX(0) scale(1);
       opacity: 0.1;
     }
+
     33% {
       transform: translateY(-15px) translateX(10px) scale(1.05);
       opacity: 0.25;
     }
+
     66% {
       transform: translateY(10px) translateX(-15px) scale(0.95);
       opacity: 0.15;
@@ -57,9 +61,11 @@
       transform: translateY(0) scale(0.8) rotate(0deg);
       opacity: 0;
     }
+
     20% {
       opacity: 0.6;
     }
+
     100% {
       transform: translateY(-150px) scale(0.4) rotate(90deg);
       opacity: 0;
@@ -70,19 +76,23 @@
     0% {
       background-position: 0% 50%;
     }
+
     50% {
       background-position: 100% 50%;
     }
+
     100% {
       background-position: 0% 50%;
     }
   }
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+@layer base {
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
 }
 
 body {
@@ -90,20 +100,28 @@ body {
   color: #E7D2AE;
   font-family: var(--font-poppins), system-ui, sans-serif;
   overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+html{
+  scroll-behavior: smooth;
 }
 
 /* Custom Scrollbar for Western Theme */
 ::-webkit-scrollbar {
   width: 10px;
 }
+
 ::-webkit-scrollbar-track {
   background: #0D0D0D;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #5E2C18;
   border: 2px solid #0D0D0D;
   border-radius: 5px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #8A2C1D;
 }
@@ -169,7 +187,7 @@ body {
   inset: 0;
   pointer-events: none;
   opacity: 0.02;
-  background-image: 
+  background-image:
     linear-gradient(45deg, transparent 45%, #E7D2AE 46%, #E7D2AE 47%, transparent 48%),
     linear-gradient(-45deg, transparent 52%, #E7D2AE 53%, #E7D2AE 54%, transparent 55%);
   background-size: 200px 200px;

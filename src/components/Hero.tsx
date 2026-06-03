@@ -2,10 +2,11 @@
 
 import React from "react";
 import logo from "../app/assets/images/logo/logo-without-bg.png"
+import Platforms from "./Platforms";
 export default function Hero() {
   return (
     <div
-      className="w-full h-screen bg-cream-bg flex flex-col select-none overflow-hidden"
+      className="w-full h-screen bg-transparent flex flex-col select-none overflow-hidden"
       style={{ padding: "18px" }}
     >
       {/* ── Outer rounded window ── */}
@@ -26,10 +27,10 @@ export default function Hero() {
         <div className="scratches-overlay z-10" />
 
         {/* Outer border outline overlay (drawn at z-40, letting z-50 navbar cover the top section) */}
-        <div className="absolute inset-0 rounded-[4px] sm:rounded-[8px] border-2 border-[rgba(180,140,80,0.35)] pointer-events-none z-40" />
+        <div className="absolute inset-0 rounded-[4px] sm:rounded-[8px]  border-[rgba(180,140,80,0.35)] pointer-events-none z-40" />
 
         {/* ── Trapezoid Center Navbar ── */}
-        <div className="absolute top-0 left-1/2 -translate-x-2/2 z-50 w-full max-w-4xl">
+        <div className="absolute -top-3 left-1/2 -translate-x-2/2 z-50 w-full max-w-4xl">
           {/* Outer Border shape (Golden Sand/Leather Border) */}
           <div
             className="bg-dark-rust p-[2px]"
@@ -40,13 +41,13 @@ export default function Hero() {
           >
             {/* Inner Content box (Cream Background) */}
             <div
-              className="bg-cream-bg h-[40px] text-black flex items-top justify-center py-12 px-12"
+              className="bg-[#0D0D0D] h-[40px] text-black flex items-top justify-center pt-4 pb-12 px-12"
               style={{
                 clipPath:
                   "polygon(0% 0%, 100% 0%, calc(100% - 23.5px) 100%, 23.5px 100%)",
               }}
             >
-              <nav className="flex gap-6 sm:gap-10 text-[14px] font-display tracking-[0.14em] uppercase text-black">
+              <nav className="flex gap-6 sm:gap-10 text-[14px] font-display tracking-[0.14em] uppercase text-vintage-beige">
                 <a
                   href="#home"
                   className="hover:text-brand-red transition-colors duration-200"
@@ -83,24 +84,31 @@ export default function Hero() {
         </div>
 
         {/* Logo (Top-Left) */}
-        <div className="absolute top-1/9 left-1/7 z-50">
-          <img
-            src={logo.src}
-            alt="Wild South Raiders Logo"
-            className="w-[280px] object-contain drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
-          />
+        <div className="absolute  top-[15%] left-[18%] z-50">
+          <div className="flex flex-col items-center justify-center">
+            <img
+              src={logo.src}
+              alt="Wild South Raiders Logo"
+              className="w-[150px] object-contain drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
+            />
+            <p className="text-[10px] sm:text-xs font-body text-vintage-beige/60 max-w-md sm:max-w-lg mt-3 leading-relaxed uppercase tracking-[0.16em] drop-shadow-md text-center ">
+              Streaming Now On
+            </p>
+            <Platforms />
+          </div>
         </div>
+
 
         {/* Welcome Title & Description */}
         <div className="absolute  space-y-3 inset-0 flex flex-col justify-end items-center text-center z-30 px-6 mt-12 bottom-8 pointer-events-none">
           <span className="text-desert-orange font-display text-[10px] sm:text-xs tracking-[0.25em] uppercase drop-shadow">
-            South India's Cinematic Tamil Podcast
+            South India's Tamil Podcast
           </span>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-[0.95] tracking-[0.06em] text-vintage-beige text-shadow-cinematic uppercase">
+          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-vintage-beige tracking-[0.05em] uppercase text-shadow-gold relative inline-block ">
             Wild South <br className="sm:hidden" /> Raiders
-          </h1>
-          <p className="text-[10px] sm:text-xs font-body text-vintage-beige/60 max-w-md sm:max-w-lg mt-6 leading-relaxed uppercase tracking-[0.16em] drop-shadow-md">
-            A deep dive into history, pop culture, and cinematic lore. Recorded weekly in Tamil.
+          </h2>
+          <p className="text-[10px] sm:text-xs font-body text-vintage-beige/60 max-w-md sm:max-w-lg leading-relaxed uppercase tracking-[0.16em] drop-shadow-md">
+            A deep dive into Politics, history, pop culture, and cinematic lore. Recorded weekly in Tamil.
           </p>
         </div>
 
