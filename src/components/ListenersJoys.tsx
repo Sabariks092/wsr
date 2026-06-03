@@ -72,7 +72,7 @@ export default function ListenersJoys() {
   };
 
   return (
-    <section id="listeners" className="relative w-full bg-[#0D0D0D] py-20 px-6 md:px-12 overflow-hidden flex flex-col justify-center ">
+    <section id="listeners" className="relative w-full bg-[#0D0D0D] py-20 pb-32 px-6 md:px-12 overflow-hidden flex flex-col justify-center ">
       {/* Background aesthetic textures */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0D0D0D] via-[#1A0A05] to-[#0D0D0D] pointer-events-none z-0" />
       <div className="dust-overlay z-10" />

@@ -3,13 +3,14 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Copyright, Mail, MapPin, Phone } from "lucide-react";
 
 // Import social media 3D icons
 import whatsappIcon from "@/app/assets/images/sm/3dicons-whatsapp-front-color.png";
 import xIcon from "@/app/assets/images/sm/3dicons-x-front-color.png";
 import instagramIcon from "@/app/assets/images/sm/3dicons-instagram-front-color.png";
 import discordIcon from "@/app/assets/images/sm/3dicons-discord-front-color.png";
+import logo from "@/app/assets/images/logo/logo-without-bg.png"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -53,10 +54,19 @@ export default function Contact() {
 
   return (
     <section id="contact" className="relative w-full bg-[#0D0D0D] py-20 px-6 md:px-12 overflow-hidden flex flex-col justify-center ">
+      {/* Background Video */}
+      <video
+        src="/arthur-morgan-sunset.1920x1080.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover object-top z-0 pointer-events-none"
+      />
       {/* Background aesthetic textures */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0D0D0D] via-[#1A0A05] to-[#0D0D0D] pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0D0D0D]/90 via-[#1A0A05]/40 to-[#0D0D0D]/90 pointer-events-none z-0" />
       <div className="dust-overlay z-10" />
-      <div className="scratches-overlay z-10" />
+      {/* <div className="scratches-overlay z-10" /> */}
 
       {/* Grid container with container width only (no max-width limits) */}
       <div className="relative w-full container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start z-20 px-2">
@@ -67,12 +77,15 @@ export default function Contact() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col space-y-8"
+          className="flex flex-col space-y-6"
         >
+          <span className="text-desert-orange font-display text-xs sm:text-sm tracking-[0.3em] uppercase block mb-3 text-shadow-cinematic">
+            Join the Gang
+          </span>
+          <img src={logo.src} width={150} className="shadow-lg" alt="" />
+
           <div>
-            <span className="text-desert-orange font-display text-xs sm:text-sm tracking-[0.3em] uppercase block mb-3 text-shadow-cinematic">
-              Join the Gang
-            </span>
+
             <h2 className="font-display text-4xl sm:text-4xl md:text-5xl text-vintage-beige tracking-[0.05em] uppercase text-shadow-gold pb-4 ">
               Get in Touch
             </h2>
@@ -82,8 +95,8 @@ export default function Contact() {
             Have a proposal, want to sponsor a roast, collaborate on a podcast, make a donation, or send a friendly (or threatening) dispatch from the frontier? Leave us a message.
           </p>
 
-          {/* Contact Details List */}
-          <div className="space-y-4 font-body text-xs sm:text-sm text-vintage-beige/80 uppercase tracking-widest">
+
+          {/*  <div className="space-y-4 font-body text-xs sm:text-sm text-vintage-beige/80 uppercase tracking-widest">
             <div className="flex items-center max-w-lg gap-4 p-3 bg-black/20 rounded border border-[#8A2C1D]/30">
               <Mail className="text-desert-orange" size={20} />
               <div>
@@ -93,13 +106,13 @@ export default function Contact() {
             </div>
 
 
-          </div>
+          </div> */}
 
           {/* Social Media Links with 3D Icons */}
           <div className="space-y-4">
-            <span className="text-desert-orange font-display text-xs sm:text-sm tracking-[0.3em] uppercase block mb-3 text-shadow-cinematic">
+            {/* <span className="text-desert-orange font-display text-xs sm:text-sm tracking-[0.3em] uppercase block mb-3 text-shadow-cinematic">
               Follow Our Dispatches
-            </span>
+            </span> */}
             <div className="flex flex-wrap gap-4 items-center">
               {socialLinks.map((social) => (
                 <a
@@ -107,7 +120,7 @@ export default function Contact() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="relative w-32 h-32 bg-black/40 border border-[#8A2C1D]/40 rounded-lg flex items-center justify-center shadow-lg hover:scale-110 hover:border-[#D9B06A] transition-all duration-300 group"
+                  className="relative w-24 h-24 bg-black/40 border border-[#8A2C1D]/40 rounded-lg flex items-center justify-center shadow-lg hover:scale-110 hover:border-[#D9B06A] transition-all duration-300 group"
                   title={social.name}
                 >
                   <Image
@@ -127,7 +140,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative p-6 sm:p-8 rounded-none border-2 border-[#D9B06A] bg-transparent shadow-[0_15px_40px_rgba(0,0,0,0.3)]"
+          className="relative w-full rounded-none bg-transparent flex justify-center"
         >
           {submitted ? (
             <motion.div
@@ -143,29 +156,31 @@ export default function Contact() {
               </p>
             </motion.div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-5 w-full  border px-8 py-10 mx-auto text-left">
               {/* Name */}
-              <div className="flex flex-col space-y-1.5">
-                <label className="font-display text-[10px] text-vintage-beige tracking-widest uppercase">
-                  RAIDER NAME
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  required
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Enter your alias"
-                  className="w-full bg-transparent border-2 border-[#8A2C1D] rounded-none p-3 font-body text-xs sm:text-sm text-vintage-beige focus:border-desert-orange outline-none uppercase tracking-wider transition-colors duration-200"
-                />
-              </div>
+
 
               {/* Email & Mobile */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
                 <div className="flex flex-col space-y-1.5">
-                  <label className="font-display text-[10px] text-vintage-beige tracking-widest uppercase">
-                    EMAIL ADDRESS
-                  </label>
+                  {/* <label className="font-display text-[10px] text-vintage-beige tracking-widest uppercase">
+                          RAIDER NAME
+                        </label> */}
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Enter your alias"
+                    className="w-full bg-transparent border-b-1 border-gold rounded-none p-3 font-body text-xs sm:text-sm text-vintage-beige focus:border-desert-orange outline-none uppercase tracking-wider transition-colors duration-200"
+                  />
+                </div>
+                <div className="flex flex-col space-y-1.5">
+                  {/* <label className="font-display text-[10px] text-vintage-beige tracking-widest uppercase">
+                            EMAIL ADDRESS
+                          </label> */}
                   <input
                     type="email"
                     name="email"
@@ -173,36 +188,36 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="mail@frontier.com"
-                    className="w-full bg-transparent border-2 border-[#8A2C1D] rounded-none p-3 font-body text-xs sm:text-sm text-vintage-beige focus:border-desert-orange outline-none tracking-wider transition-colors duration-200"
+                    className="w-full bg-transparent border-b-1 border-gold rounded-none p-3 font-body text-xs sm:text-sm text-vintage-beige focus:border-desert-orange outline-none tracking-wider transition-colors duration-200"
                   />
                 </div>
-                <div className="flex flex-col space-y-1.5">
-                  <label className="font-display text-[10px] text-vintage-beige tracking-widest uppercase">
-                    MOBILE NO
-                  </label>
-                  <input
-                    type="tel"
-                    name="mobile"
-                    required
-                    value={formData.mobile}
-                    onChange={handleChange}
-                    placeholder="Enter digits"
-                    className="w-full bg-transparent border-2 border-[#8A2C1D] rounded-none p-3 font-body text-xs sm:text-sm text-vintage-beige focus:border-desert-orange outline-none tracking-wider transition-colors duration-200"
-                  />
-                </div>
+              </div>
+              <div className="flex flex-col space-y-1.5">
+                {/* <label className="font-display text-[10px] text-vintage-beige tracking-widest uppercase">
+                          RAIDER NAME
+                        </label> */}
+                <input
+                  type="mobile"
+                  name="mobile"
+                  required
+                  value={formData.mobile}
+                  onChange={handleChange}
+                  placeholder="Enter your mobile number"
+                  className="w-full bg-transparent border-b-1 border-gold rounded-none p-3 font-body text-xs sm:text-sm text-vintage-beige focus:border-desert-orange outline-none uppercase tracking-wider transition-colors duration-200"
+                />
               </div>
 
               {/* Regarding Dropdown */}
               <div className="flex flex-col space-y-1.5">
-                <label className="font-display text-[10px] text-vintage-beige tracking-widest uppercase">
-                  REGARDING
-                </label>
+                {/* <label className="font-display text-[10px] text-vintage-beige tracking-widest uppercase">
+                          REGARDING
+                        </label> */}
                 <div className="relative">
                   <select
                     name="regarding"
                     value={formData.regarding}
                     onChange={handleChange}
-                    className="w-full bg-transparent border-2 border-[#8A2C1D] rounded-none p-3 font-body text-xs sm:text-sm text-vintage-beige focus:border-desert-orange outline-none uppercase tracking-wider appearance-none transition-colors duration-200 cursor-pointer"
+                    className="w-full bg-transparent border-b-1 border-gold rounded-none p-3 font-body text-xs sm:text-sm text-vintage-beige focus:border-desert-orange outline-none uppercase tracking-wider appearance-none transition-colors duration-200 cursor-pointer"
                   >
                     <option className="bg-[#0D0D0D] text-vintage-beige" value="podcast-collaboration">Podcast Collaboration</option>
                     <option className="bg-[#0D0D0D] text-vintage-beige" value="promotion-collaboration">Promotion Collaboration</option>
@@ -219,9 +234,9 @@ export default function Contact() {
 
               {/* Message */}
               <div className="flex flex-col space-y-1.5">
-                <label className="font-display text-[10px] text-vintage-beige tracking-widest uppercase">
-                  THE DISPATCH MESSAGE
-                </label>
+                {/* <label className="font-display text-[10px] text-vintage-beige tracking-widest uppercase">
+                          THE DISPATCH MESSAGE
+                        </label> */}
                 <textarea
                   name="message"
                   required
@@ -229,7 +244,7 @@ export default function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="State your business..."
-                  className="w-full bg-transparent border-2 border-[#8A2C1D] rounded-none p-3 font-body text-xs sm:text-sm text-vintage-beige focus:border-desert-orange outline-none uppercase tracking-wider transition-colors duration-200 resize-none"
+                  className="w-full bg-transparent border-b-1 border-gold rounded-none p-3 font-body text-xs sm:text-sm text-vintage-beige focus:border-desert-orange outline-none uppercase tracking-wider transition-colors duration-200 resize-none"
                 />
               </div>
 
@@ -244,6 +259,27 @@ export default function Contact() {
           )}
         </motion.div>
 
+      </div>
+      <div className="w-full max-w-7xl mx-auto h-[2px] bg-gradient-to-r from-transparent via-[#8A2C1D]/60 to-transparent mt-16 z-20" />
+      <div className="flex justify-between items-center container mx-auto mt-4">
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className="text-[10px] sm:text-xs font-body text-vintage-beige/60  leading-relaxed flex items-center gap-2 uppercase tracking-[0.16em] drop-shadow-md mx-auto"
+        >
+          <Copyright/> 2026 All rightsn Reserved By Wild South Raiders. 
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className="text-[10px] sm:text-xs font-body text-vintage-beige/60 leading-relaxed uppercase tracking-[0.16em] drop-shadow-md mx-auto"
+        >
+         Online Presence Powered By <a href="https://samhub.in" target="_blank" rel="noopenner" className="hover: underline underline-offset-8 decoration-dessert-orange">Samhub Innovations</a>
+        </motion.p>
       </div>
     </section>
   );

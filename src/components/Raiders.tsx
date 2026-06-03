@@ -13,6 +13,7 @@ import Tobirama from "@/app/assets/images/raiders/Tobirama Senju.jpg";
 import crossedgun from "@/app/assets/images/guns/crossed-gun.png"
 import gunleft from "@/app/assets/images/guns/gunleft.png"
 import gunright from "@/app/assets/images/guns/gunright.png"
+import bgPaper from "@/app/assets/images/bg/bg-paper3.png";
 interface Member {
   name: string;
   codename: string;
@@ -87,21 +88,21 @@ const members: Member[] = [
     ],
   },
 
-  {
-    name: "Kisame Hoshikagae",
-    link:"https://www.instagram.com/kisamenord/",
-    codename: "THE COMEDY RENEGADE",
-    role: "Social & Media Critic",
-    weapon: "Samehada Movie Roasts",
-    bounty: "135,000,000",
-    image: Kisame,
-    stats: [
-      { label: "Humor", value: 97 },
-      { label: "Critique", value: 95 },
-      { label: "Roast", value: 96 },
-      { label: "Savage", value: 93 },
-    ],
-  },
+  // {
+  //   name: "Kisame Hoshikagae",
+  //   link:"https://www.instagram.com/kisamenord/",
+  //   codename: "THE COMEDY RENEGADE",
+  //   role: "Social & Media Critic",
+  //   weapon: "Samehada Movie Roasts",
+  //   bounty: "135,000,000",
+  //   image: Kisame,
+  //   stats: [
+  //     { label: "Humor", value: 97 },
+  //     { label: "Critique", value: 95 },
+  //     { label: "Roast", value: 96 },
+  //     { label: "Savage", value: 93 },
+  //   ],
+  // },
 ];
 
 export default function Raiders() {
@@ -151,41 +152,40 @@ export default function Raiders() {
       </div>
 
       {/* 5-Column Raiders Grid */}
-      <div className="relative w-full container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-4 z-20 px-2">
+      <div className="relative w-full container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-4 z-20 px-2">
         {members.map((member, index) => (
          <a key={member.name} href={member.link}>
            <motion.div
-            
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.15 }}
-            className="group relative wanted-poster flex flex-col items-center p-3 rounded overflow-hidden bg-[#E7D2AE] text-[#0D0D0D] transition-transform duration-300 hover:scale-[1.03] hover:shadow-[0_20px_45px_rgba(201,26,26,0.25)] select-none border-4 double border-[#8A2C1D]"
+            style={{ backgroundImage: `url(${bgPaper.src})`,backgroundPosition:"center", backgroundSize:"cover", backgroundRepeat: "no-repeat" }}
+            className="group relative flex flex-col items-center p-12 py-16 rounded overflow-hidden text-black transition-transform duration-300 hover:scale-[1.03] hover:shadow-[0_20px_45px_rgba(201,26,26,0.25)] select-none shadow-[0_10px_25px_rgba(0,0,0,0.4)]"
           >
             {/* Wanted poster header */}
-            <div className="w-full text-center border-b-2 border-dashed border-[#8A2C1D] pb-2 mb-3">
+            <div className="w-full text-center border-b-2 border-dashed border-black pb-2 mb-3">
               {/* <Image className="w-[80px] mx-auto h-[80px] object-contain" src={crossedgun} alt="Gun" width={80} height={80} /> */}
 
               <div className="flex items-center justify-center gap-2">
-                <span className="font-display text-2xl tracking-[0.1em] text-[#C91A1A] block transform skew-x-[-4deg]">
+                <span className="font-display text-4xl tracking-[0.1em] text-black block transform skew-x-[-4deg]">
                   WANTED
                 </span>
               </div>
 
-
-              <span className="font-body text-[8px] font-bold tracking-[0.2em] text-[#8A2C1D]/80 block uppercase">
+              <span className="font-body text-[8px] py-2 font-bold tracking-[0.2em] text-black/80 block uppercase">
                 Reward for information
               </span>
             </div>
 
             {/* Image Container (Strictly 4:5 Aspect Ratio) */}
-            <div className="relative w-full aspect-[4/5] overflow-hidden bg-[#0D0D0D] border-2 border-[#8A2C1D] rounded">
+            <div className="relative w-full h-[320px] my-3  shadow-[0_10px_25px_rgba(0,0,0,0.4)] overflow-hidden  rounded">
               <Image
                 src={member.image}
                 alt={member.name}
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
-                className="object-cover  group-hover:grayscale-0 transition-all duration-500 ease-in-out scale-100 group-hover:scale-105"
+                className="object-cover group-hover:grayscale-0  transition-all duration-500 ease-in-out scale-100 group-hover:scale-105"
               />
 
               {/* Texture overlay on image */}
@@ -239,7 +239,7 @@ export default function Raiders() {
 
               <div className="flex items-center justify-center gap-2">
                 <Image className="w-[30px] h-[30px] object-contain" src={gunleft} alt="Gun" width={35} height={35} />
-                <h3 className="font-display text-lg tracking-wide text-[#0D0D0D] truncate uppercase">
+                <h3 className="font-display text-lg tracking-wide text-black truncate uppercase">
                   {member.name}
                 </h3>
                 <Image className="w-[30px] h-[30px] object-contain" src={gunright} alt="Gun" width={35} height={35} />
@@ -250,13 +250,13 @@ export default function Raiders() {
                 {member.role}
               </p> */}
               <a href={member.link} target="_blank" rel="noopener noreferrer" >
-                <span className="font-body text-[9px] tracking-widest text-vintage-orange uppercase block leading-none">
+                <span className="font-body text-[9px] tracking-widest text-black uppercase block leading-none">
                 BOUNTY
               </span>
               {/* Bounty Display */}
-              <div className="mt-2.5 bg-[#8A2C1D] hover:scale-105 transition duration-200 ease text-[#E7D2AE] py-3 px-2 rounded border border-[#D9B06A] inline-block w-full">
+              <div className="mt-2.5  hover:scale-105 transition duration-200 ease text-black py-3 px-2 rounded border border-black inline-block w-full">
 
-                <span className="font-display text-sm tracking-wider block mt-0.5 text-center text-[#E7D2AE]">
+                <span className="font-display text-sm tracking-wider block mt-0.5 text-center text-black">
                   $ {member.bounty}
                 </span>
               </div>
