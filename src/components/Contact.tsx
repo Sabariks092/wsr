@@ -269,7 +269,7 @@ export default function Contact() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="text-[10px] sm:text-xs font-body text-vintage-beige/60  leading-relaxed flex items-center gap-2 uppercase tracking-[0.16em] drop-shadow-md mx-auto"
+          className="text-[10px] sm:text-xs font-body text-vintage-beige/60  leading-relaxed flex items-center gap-2 uppercase tracking-[0.16em] drop-shadow-md"
         >
           <Copyright/> 2026 All rightsn Reserved By Wild South Raiders. 
         </motion.p>
@@ -278,7 +278,7 @@ export default function Contact() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="text-[10px] sm:text-xs font-body text-vintage-beige/60 leading-relaxed uppercase tracking-[0.16em] drop-shadow-md mx-auto"
+          className="text-[10px] sm:text-xs font-body text-vintage-beige/60 leading-relaxed uppercase tracking-[0.16em] drop-shadow-md"
         >
          Online Presence Powered By <a href="https://samhub.in" target="_blank" rel="noopenner" className="hover: underline underline-offset-8 decoration-dessert-orange">Samhub Innovations</a>
         </motion.p>
