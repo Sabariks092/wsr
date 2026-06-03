@@ -1,0 +1,569 @@
+# Wild South Raiders — Complete Design Language System
+
+Based on the visual DNA of the provided artwork, the brand aesthetic can be described as:
+
+> **Rugged Western + Vintage Outlaw + Burnt Desert + Cinematic Adventure**
+
+The design language should feel:
+
+* Bold
+* Fearless
+* Dusty
+* Weathered
+* Vintage
+* Handcrafted
+* Cinematic
+* High Contrast
+* Masculine
+* Adventure-driven
+
+---
+
+# 1. Core Brand Personality
+
+### Keywords
+
+* Outlaw
+* Frontier
+* Desert
+* Gunslinger
+* Dust & Smoke
+* Rustic
+* Vintage Wood
+* Wild West
+* Survival
+* Brotherhood
+* Adventure
+
+### Emotional Tone
+
+| Attribute | Scale |
+| --------- | ----- |
+| Modern    | 30%   |
+| Vintage   | 70%   |
+| Corporate | 0%    |
+| Cinematic | 90%   |
+| Rugged    | 95%   |
+| Luxury    | 20%   |
+| Adventure | 100%  |
+
+---
+
+# 2. Primary Color Palette
+
+Extracted from both artworks.
+
+## Brand Red (Primary)
+
+Used as the dominant background.
+
+```css
+--color-brand-red: #C91A1A;
+```
+
+Usage:
+
+* Hero backgrounds
+* CTA sections
+* Promotional banners
+
+---
+
+## Burnt Desert Orange
+
+Sunset color.
+
+```css
+--color-desert-orange: #F08E2A;
+```
+
+Usage:
+
+* Accent elements
+* Hover states
+* Highlight borders
+
+---
+
+## Golden Sand
+
+Typography highlight.
+
+```css
+--color-golden-sand: #D9B06A;
+```
+
+Usage:
+
+* Titles
+* Decorative icons
+* Premium labels
+
+---
+
+## Vintage Beige
+
+Main logo text color.
+
+```css
+--color-vintage-beige: #E7D2AE;
+```
+
+Usage:
+
+* Headings
+* Logo text
+* Important labels
+
+---
+
+## Dark Rust
+
+Logo container.
+
+```css
+--color-dark-rust: #8A2C1D;
+```
+
+Usage:
+
+* Cards
+* Section dividers
+* Panels
+
+---
+
+## Burnt Brown
+
+Secondary background.
+
+```css
+--color-burnt-brown: #5E2C18;
+```
+
+Usage:
+
+* Footers
+* Dark cards
+
+---
+
+## Charcoal Black
+
+Silhouettes.
+
+```css
+--color-charcoal: #0D0D0D;
+```
+
+Usage:
+
+* Text
+* Overlays
+* Shadows
+
+---
+
+## Dust Gray
+
+Neutral support color.
+
+```css
+--color-dust-gray: #474747;
+```
+
+Usage:
+
+* Secondary text
+* Meta information
+
+---
+
+# 3. Extended UI Palette
+
+```css
+--success: #5C8A3D;
+--warning: #D88A2D;
+--danger: #B62323;
+--info: #B58A4A;
+```
+
+All colors should feel dusty and earthy.
+
+Avoid:
+
+❌ Neon colors
+❌ Pure blue
+❌ Bright green
+❌ Tech-style gradients
+
+---
+
+# 4. Typography System
+
+The logo typography resembles:
+
+### Primary Display Font
+
+Best matches:
+
+* Rye
+* Alfred Stout
+* Playbill
+* Black Ops One
+* Sancreek
+
+Recommended:
+
+```css
+font-family: "Rye", serif;
+```
+
+Used for:
+
+* Hero headings
+* Banner titles
+* Section titles
+
+---
+
+### Secondary Font
+
+For readable content:
+
+```css
+font-family: "Poppins", sans-serif;
+```
+
+Weights:
+
+```text
+400 Regular
+500 Medium
+600 SemiBold
+700 Bold
+```
+
+---
+
+# Typography Scale
+
+### Hero Title
+
+```css
+72px
+font-weight: 700
+line-height: 1
+letter-spacing: 2px
+```
+
+---
+
+### Section Heading
+
+```css
+48px
+font-weight: 700
+```
+
+---
+
+### Card Title
+
+```css
+24px
+font-weight: 600
+```
+
+---
+
+### Body
+
+```css
+16px
+font-weight: 400
+line-height: 1.8
+```
+
+---
+
+# 5. Texture Language
+
+The artwork is NOT flat.
+
+Everything has:
+
+### Required
+
+* Dust texture
+* Scratches
+* Grain
+* Worn paint
+* Leather feel
+* Aged wood feel
+
+### Avoid
+
+* Glassmorphism
+* Frosted effects
+* Modern SaaS aesthetics
+* Pure flat UI
+
+---
+
+# 6. Button Design System
+
+### Primary Button
+
+Background:
+
+```css
+#C91A1A
+```
+
+Text:
+
+```css
+#E7D2AE
+```
+
+Border:
+
+```css
+2px solid #8A2C1D
+```
+
+Radius:
+
+```css
+12px
+```
+
+Shadow:
+
+```css
+0 6px 20px rgba(0,0,0,.35)
+```
+
+---
+
+### Hover
+
+```css
+background: #F08E2A;
+transform: translateY(-2px);
+```
+
+---
+
+# 7. Card System
+
+Cards should resemble:
+
+### Inspiration
+
+* Saloon signboards
+* Old wooden plaques
+* Wanted posters
+
+Style:
+
+```css
+background: #8A2C1D;
+border: 2px solid #D9B06A;
+border-radius: 18px;
+```
+
+Add:
+
+```css
+texture overlay
+```
+
+---
+
+# 8. Icon Style
+
+Use only:
+
+### Style
+
+* Line icons
+* Western themed
+* Rustic
+
+Examples:
+
+* Horse
+* Revolver
+* Campfire
+* Compass
+* Sheriff star
+* Boots
+* Hat
+* Wagon wheel
+
+Avoid:
+
+❌ Material Design icons
+❌ Corporate icons
+
+---
+
+# 9. Illustration Style
+
+All illustrations should be:
+
+### Style
+
+* Silhouettes
+* Sunset scenes
+* Desert landscapes
+* Dust storms
+* Cowboy figures
+
+### Color Treatment
+
+Only:
+
+```text
+Black
+Rust
+Orange
+Sand
+Brown
+```
+
+---
+
+# 10. Background System
+
+## Hero Section
+
+Layer structure:
+
+```text
+1. Red background
+2. Giant sunset circle
+3. Desert silhouette
+4. Character silhouette
+5. Dust particles
+```
+
+---
+
+## Content Sections
+
+Use:
+
+```css
+#F5E8D0
+```
+
+for light backgrounds.
+
+Alternate with:
+
+```css
+#5E2C18
+```
+
+for dark sections.
+
+---
+
+# 11. Shadows & Depth
+
+Heavy cinematic shadows.
+
+```css
+box-shadow:
+0 10px 30px rgba(0,0,0,.35);
+```
+
+Text shadows:
+
+```css
+2px 4px 8px rgba(0,0,0,.45);
+```
+
+---
+
+# 12. Border Language
+
+No sharp corporate borders.
+
+Use:
+
+```css
+border-radius: 12px;
+```
+
+or
+
+```css
+border-radius: 18px;
+```
+
+Decorative gold borders preferred.
+
+---
+
+# 13. Animation System
+
+Animations should feel subtle and atmospheric.
+
+Allowed:
+
+* Dust floating
+* Ember particles
+* Slow parallax
+* Smoke movement
+* Horse idle movement
+
+Duration:
+
+```css
+2s–8s
+```
+
+Avoid:
+
+❌ Bounce
+❌ Flashing
+❌ Neon glows
+❌ Fast zooms
+
+---
+
+# 14. Developer Design Tokens
+
+```css
+:root{
+
+--brand-red:#C91A1A;
+--desert-orange:#F08E2A;
+--golden-sand:#D9B06A;
+--vintage-beige:#E7D2AE;
+
+--dark-rust:#8A2C1D;
+--burnt-brown:#5E2C18;
+--charcoal:#0D0D0D;
+--dust-gray:#474747;
+
+--radius-sm:12px;
+--radius-lg:18px;
+
+--shadow:
+0 10px 30px rgba(0,0,0,.35);
+
+--font-display:"Rye", serif;
+--font-body:"Poppins", sans-serif;
+}
+```
+
+# Final Visual Direction
+
+If you hand this to a developer, the guiding rule should be:
+
+> **"Build it like a premium Western adventure game website, not a modern SaaS dashboard. Every component should feel aged, dusty, cinematic, handcrafted, and rugged while maintaining readability and usability."**
