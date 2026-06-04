@@ -249,7 +249,7 @@ export default function Raiders() {
               {/* <p className="font-body text-[9px] text-[#8A2C1D] font-bold tracking-wider uppercase truncate mt-0.5">
                 {member.role}
               </p> */}
-              <a href={member.link} target="_blank" rel="noopener noreferrer" >
+              <div className="block">
                 <span className="font-body text-[9px] tracking-widest text-black uppercase block leading-none">
                 BOUNTY
               </span>
@@ -260,7 +260,7 @@ export default function Raiders() {
                   $ {member.bounty}
                 </span>
               </div>
-              </a>
+              </div>
             </div>
           </motion.div>
          </a>

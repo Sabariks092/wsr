@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import about from "@/app/assets/images/about.webp"
-import { BicepsFlexed, BicepsFlexedIcon } from "lucide-react";
+import { BicepsFlexed } from "lucide-react";
 
 export default function About() {
   return (
@@ -65,7 +65,7 @@ export default function About() {
               This is not a space for blind reverence or easy answers. It is a space for curiosity, skepticism, and honest conversation. If you're willing to think beyond convention and engage with ideas that challenge the status quo, you're in the right place. This isn't entertainment for the faint-hearted—it's critique with teeth.
             </p>
             <p className="text-desert-orange font-medium font-display flex items-center gap-2 tracking-widest text-[11px] sm:text-xs">
-              AZHUTHUKITU IRUNDHAALUM UZHUDHUKITU IRUPPOM <BicepsFlexedIcon/> <BicepsFlexedIcon/> <BicepsFlexedIcon/>
+              AZHUTHUKITU IRUNDHAALUM UZHUDHUKITU IRUPPOM <BicepsFlexed size={16}/> <BicepsFlexed size={16}/> <BicepsFlexed size={16}/>
             </p>
           </div>
 

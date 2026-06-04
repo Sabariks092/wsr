@@ -28,6 +28,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${rye.variable} ${poppins.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-[#0D0D0D] text-[#E7D2AE]">{children}</body>
     </html>
