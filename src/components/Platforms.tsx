@@ -1,9 +1,9 @@
 import React from 'react'
-import apple from "@/app/assets/images/platforms/apple-podcasts.png";
-import amazon from "@/app/assets/images/platforms/amazon-music.png";
-import spotify from "@/app/assets/images/platforms/spotify.png";
-import cloudsound from "@/app/assets/images/platforms/cloudsound.png";
-import pocketcasts from "@/app/assets/images/platforms/pocket-casts.png";
+import apple from "@/app/assets/images/platforms/apple-podcasts.webp";
+import amazon from "@/app/assets/images/platforms/amazon-music.webp";
+import spotify from "@/app/assets/images/platforms/spotify.webp";
+import cloudsound from "@/app/assets/images/platforms/cloudsound.webp";
+import pocketcasts from "@/app/assets/images/platforms/pocket-casts.webp";
 import Image from 'next/image';
 const Platforms = () => {
   return (

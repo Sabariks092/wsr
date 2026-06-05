@@ -6,10 +6,10 @@ import { motion } from "framer-motion";
 import { Play, ThumbsUp } from "lucide-react";
 
 // Manually imported images
-import kovil from "@/app/assets/images/episodes/kovil.jpg";
-import goc from "@/app/assets/images/episodes/gameofcaste.jpg";
+import kovil from "@/app/assets/images/episodes/kovil.webp";
+import goc from "@/app/assets/images/episodes/gameofcaste.webp";
 import pea from "@/app/assets/images/episodes/post-election-analysis.webp";
-import mumbai from "@/app/assets/images/episodes/maja-mumbai.jpg";
+import mumbai from "@/app/assets/images/episodes/maja-mumbai.webp";
 
 interface Episode {
     title: string;

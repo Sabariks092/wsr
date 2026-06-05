@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import logo from "@/app/assets/images/logo/logo-without-bg.png";
-import mobileBg from "@/app/assets/images/mobile-menu.png";
+import logo from "@/app/assets/images/logo/logo-without-bg.webp";
+import mobileBg from "@/app/assets/images/mobile-menu.webp";
 import Platforms from "./Platforms";
 import { Menu, X } from "lucide-react";
 

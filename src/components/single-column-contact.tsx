@@ -6,11 +6,11 @@ import { motion } from "framer-motion";
 import { Mail, MapPin, Phone } from "lucide-react";
 
 // Import social media 3D icons
-import whatsappIcon from "@/app/assets/images/sm/3dicons-whatsapp-front-color.png";
-import xIcon from "@/app/assets/images/sm/3dicons-x-front-color.png";
-import instagramIcon from "@/app/assets/images/sm/3dicons-instagram-front-color.png";
-import discordIcon from "@/app/assets/images/sm/3dicons-discord-front-color.png";
-import bg from "@/app/assets/images/bg/contact-bg.jpg"
+import whatsappIcon from "@/app/assets/images/sm/3dicons-whatsapp-front-color.webp";
+import xIcon from "@/app/assets/images/sm/3dicons-x-front-color.webp";
+import instagramIcon from "@/app/assets/images/sm/3dicons-instagram-front-color.webp";
+import discordIcon from "@/app/assets/images/sm/3dicons-discord-front-color.webp";
+import bg from "@/app/assets/images/bg/contact-bg.webp"
 
 export default function Contact() {
   const [formData, setFormData] = useState({

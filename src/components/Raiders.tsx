@@ -5,21 +5,21 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 // Import front images
-import Kakashi from "@/app/assets/images/raiders/Kakashi Hatake.jpg";
-import Mani from "@/app/assets/images/raiders/Mankatha Mani.jpg";
-import SpaceMonkey from "@/app/assets/images/raiders/Space Monkey 01.jpg";
-import Tobirama from "@/app/assets/images/raiders/Tobirama Senju.jpg";
+import Kakashi from "@/app/assets/images/raiders/Kakashi Hatake.webp";
+import Mani from "@/app/assets/images/raiders/Mankatha Mani.webp";
+import SpaceMonkey from "@/app/assets/images/raiders/Space Monkey 01.webp";
+import Tobirama from "@/app/assets/images/raiders/Tobirama Senju.webp";
 
 // Import back flip images
-import FlipTobirama from "@/app/assets/images/raiders/flip-tobirama-senju.png";
-import FlipKakashi from "@/app/assets/images/raiders/flip-kakashi-hatake.png";
-import FlipSpaceMonkey from "@/app/assets/images/raiders/flip-space-monkey-01.png";
-import FlipMani from "@/app/assets/images/raiders/flip-mankatha-mani.jpg";
+import FlipTobirama from "@/app/assets/images/raiders/flip-tobirama-senju.webp";
+import FlipKakashi from "@/app/assets/images/raiders/flip-kakashi-hatake.webp";
+import FlipSpaceMonkey from "@/app/assets/images/raiders/flip-space-monkey-01.webp";
+import FlipMani from "@/app/assets/images/raiders/flip-mankatha-mani.webp";
 
 // Gun assets
-import gunleft from "@/app/assets/images/guns/gunleft.png";
-import gunright from "@/app/assets/images/guns/gunright.png";
-import bgPaper from "@/app/assets/images/bg/bg-paper3.png";
+import gunleft from "@/app/assets/images/guns/gunleft.webp";
+import gunright from "@/app/assets/images/guns/gunright.webp";
+import bgPaper from "@/app/assets/images/bg/bg-paper3.webp";
 
 interface Member {
   name: string;

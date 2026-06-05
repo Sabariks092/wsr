@@ -5,12 +5,12 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 
-import faqWanted from "@/app/assets/images/faq/faq_wanted.png";
-import faqCoins from "@/app/assets/images/faq/faq_coins.png";
-import faqBook from "@/app/assets/images/faq/faq_book.png";
-import faqCactus from "@/app/assets/images/faq/faq_cactus.png";
+import faqWanted from "@/app/assets/images/faq/faq_wanted.webp";
+import faqCoins from "@/app/assets/images/faq/faq_coins.webp";
+import faqBook from "@/app/assets/images/faq/faq_book.webp";
+import faqCactus from "@/app/assets/images/faq/faq_cactus.webp";
 
-import template from "@/app/assets/images/faq/template.png";
+import template from "@/app/assets/images/faq/template.webp";
 
 interface FaqItem {
   id: number;
