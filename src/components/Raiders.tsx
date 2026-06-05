@@ -4,24 +4,34 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-// Import images
+// Import front images
 import Kakashi from "@/app/assets/images/raiders/Kakashi Hatake.jpg";
-import Kisame from "@/app/assets/images/raiders/Kisame Hoshikagae.jpg";
 import Mani from "@/app/assets/images/raiders/Mankatha Mani.jpg";
 import SpaceMonkey from "@/app/assets/images/raiders/Space Monkey 01.jpg";
 import Tobirama from "@/app/assets/images/raiders/Tobirama Senju.jpg";
-import crossedgun from "@/app/assets/images/guns/crossed-gun.png"
-import gunleft from "@/app/assets/images/guns/gunleft.png"
-import gunright from "@/app/assets/images/guns/gunright.png"
+
+// Import back flip images
+import FlipTobirama from "@/app/assets/images/raiders/flip-tobirama-senju.png";
+import FlipKakashi from "@/app/assets/images/raiders/flip-kakashi-hatake.png";
+import FlipSpaceMonkey from "@/app/assets/images/raiders/flip-space-monkey-01.png";
+import FlipMani from "@/app/assets/images/raiders/flip-mankatha-mani.jpg";
+
+// Gun assets
+import gunleft from "@/app/assets/images/guns/gunleft.png";
+import gunright from "@/app/assets/images/guns/gunright.png";
 import bgPaper from "@/app/assets/images/bg/bg-paper3.png";
+
 interface Member {
   name: string;
   codename: string;
-  link:string;
+  link: string;
   role: string;
   weapon: string;
   bounty: string;
   image: any;
+  fliptitle:string; 
+  flipImage: any;
+  description: string;
   stats: { label: string; value: number }[];
 }
 
@@ -29,11 +39,14 @@ const members: Member[] = [
   {
     name: "Tobirama Senju",
     codename: "THE RATIONAL OUTLAW",
-    link:"https://www.instagram.com/tobiramasenju_wsr/",
+    link: "https://www.instagram.com/tobiramasenju_wsr/",
     role: "Core Host & Strategist",
     weapon: "Stencil Logic & Facts",
     bounty: "150,000,000",
     image: Tobirama,
+    fliptitle:"Panni Kari Sapdriya Dae ?",
+    flipImage: FlipTobirama,
+    description: "Suvaya irukkum dae !",
     stats: [
       { label: "Logic", value: 98 },
       { label: "Debate", value: 95 },
@@ -44,11 +57,14 @@ const members: Member[] = [
   {
     name: "Kakashi Hatake",
     codename: "THE CINEMATIC ROASTER",
-    link:"https://www.instagram.com/kakashi_hatake_fitness/",
+    link: "https://www.instagram.com/kakashi_hatake_fitness/",
     role: "Movie & Pop Culture Critic",
     weapon: "Sarcastic Chidori",
     bounty: "120,000,000",
-    image: Kakashi,
+    image: Kakashi,   
+    fliptitle:"Sensei In Parallel Universe ?",
+    flipImage: FlipKakashi,
+    description: "aatatha podu mamae !",
     stats: [
       { label: "Wit", value: 96 },
       { label: "Cinema IQ", value: 94 },
@@ -58,12 +74,15 @@ const members: Member[] = [
   },
   {
     name: "Space Monkey 01",
-    link:"https://www.instagram.com/spacemonkey01.wsr/",
+    link: "https://www.instagram.com/spacemonkey01.wsr/",
     codename: "THE COSMIC GEEK",
     role: "Tech & Gaming Historian",
     weapon: "Keyboard Cannon",
     bounty: "115,000,000",
     image: SpaceMonkey,
+        fliptitle:"Indha Paal Kudi Bro !",
+    flipImage: FlipSpaceMonkey,
+    description: "Nalla irukku nae !",
     stats: [
       { label: "Tech", value: 96 },
       { label: "Gaming", value: 95 },
@@ -71,15 +90,17 @@ const members: Member[] = [
       { label: "Roast", value: 87 },
     ],
   },
-
   {
     name: "Mankatha Mani",
-    link:"https://www.instagram.com/mankatha_mani_wsr/",
+    link: "https://www.instagram.com/mankatha_mani_wsr/",
     codename: "THE LIFESTYLE GUNSLINGER",
     role: "Sports & Trends Expert",
     weapon: "Style & Sports Intuition",
     bounty: "110,000,000",
     image: Mani,
+        fliptitle:"Rooster Fight Ku Varingla na ?",
+    flipImage: FlipMani,
+    description: " rare footage of Tsunami with kelattu kozhi",
     stats: [
       { label: "Style", value: 95 },
       { label: "Sports IQ", value: 92 },
@@ -87,27 +108,11 @@ const members: Member[] = [
       { label: "Roast", value: 85 },
     ],
   },
-
-  // {
-  //   name: "Kisame Hoshikagae",
-  //   link:"https://www.instagram.com/kisamenord/",
-  //   codename: "THE COMEDY RENEGADE",
-  //   role: "Social & Media Critic",
-  //   weapon: "Samehada Movie Roasts",
-  //   bounty: "135,000,000",
-  //   image: Kisame,
-  //   stats: [
-  //     { label: "Humor", value: 97 },
-  //     { label: "Critique", value: 95 },
-  //     { label: "Roast", value: 96 },
-  //     { label: "Savage", value: 93 },
-  //   ],
-  // },
 ];
 
 export default function Raiders() {
   return (
-    <section id="riders" className="relative w-full bg-[#0D0D0D] py-20 px-6 md:px-12 overflow-hidden flex flex-col justify-center">
+    <section id="riders" className="relative w-full bg-[#0D0D0D] py-10 md:py-20 px-7 md:px-12 overflow-hidden flex flex-col justify-center">
       {/* Background aesthetic textures */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0D0D0D] via-[#1A0A05] to-[#0D0D0D] pointer-events-none z-0" />
       <div className="dust-overlay z-10" />
@@ -133,11 +138,9 @@ export default function Raiders() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="font-display text-4xl sm:text-4xl md:text-5xl text-vintage-beige tracking-[0.05em] uppercase text-shadow-gold relative inline-block pb-4"
+          className="font-display text-3xl sm:text-3xl md:text-5xl text-vintage-beige tracking-[0.05em] uppercase text-shadow-gold relative inline-block pb-4"
         >
           Wanted Raiders
-          {/* Custom double-rule divider */}
-          {/* <span className="absolute bottom-0 left-1/4 right-1/4 h-[3px] border-y border-[#D9B06A]"></span> */}
         </motion.h2>
 
         <motion.p
@@ -151,119 +154,118 @@ export default function Raiders() {
         </motion.p>
       </div>
 
-      {/* 5-Column Raiders Grid */}
+      {/* 4-Column Raiders Grid */}
       <div className="relative w-full container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-4 z-20 px-2">
         {members.map((member, index) => (
-         <a key={member.name} href={member.link}>
-           <motion.div
+          <motion.div
+            key={member.name}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.15 }}
-            style={{ backgroundImage: `url(${bgPaper.src})`,backgroundPosition:"center", backgroundSize:"cover", backgroundRepeat: "no-repeat" }}
-            className="group relative flex flex-col items-center p-12 py-16 rounded overflow-hidden text-black transition-transform duration-300 hover:scale-[1.03] hover:shadow-[0_20px_45px_rgba(201,26,26,0.25)] select-none shadow-[0_10px_25px_rgba(0,0,0,0.4)]"
+            className="group w-full perspective-1000 select-none h-[470px] md:h-[580px]"
           >
-            {/* Wanted poster header */}
-            <div className="w-full text-center border-b-2 border-dashed border-black pb-2 mb-3">
-              {/* <Image className="w-[80px] mx-auto h-[80px] object-contain" src={crossedgun} alt="Gun" width={80} height={80} /> */}
+            <a href={member.link} className="block w-full h-full cursor-pointer">
+              {/* Inner card container that handles the 180deg flip */}
+              <div className="relative w-full h-full preserve-3d transition-transform duration-700 ease-in-out group-hover:[transform:rotateY(180deg)]">
+                
+                {/* ── CARD FRONT ── */}
+                <div
+                  style={{
+                    backgroundImage: `url(${bgPaper.src})`,
+                    backgroundPosition: "center",
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                  className="absolute inset-0 w-full h-full backface-hidden flex flex-col justify-between md:p-8 p-6 py-8 md:py-10 rounded border-4 double border-black/10 text-black shadow-[0_10px_25px_rgba(0,0,0,0.4)]"
+                >
+                  {/* Wanted poster header */}
+                  <div className="w-full text-center border-b-2 border-dashed border-black pb-2">
+                    <div className="flex items-center justify-center gap-2">
+                      <span className="font-display text-4xl tracking-[0.1em] text-black block transform skew-x-[-4deg]">
+                        WANTED
+                      </span>
+                    </div>
+                    <span className="font-body text-[8px] py-1 font-bold tracking-[0.2em] text-black/80 block uppercase">
+                      Reward for information
+                    </span>
+                  </div>
 
-              <div className="flex items-center justify-center gap-2">
-                <span className="font-display text-4xl tracking-[0.1em] text-black block transform skew-x-[-4deg]">
-                  WANTED
-                </span>
-              </div>
+                  {/* Image Container */}
+                  <div className="relative w-full flex-1 min-h-0 my-3 shadow-[0_10px_25px_rgba(0,0,0,0.3)] overflow-hidden rounded border border-black/10">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="object-cover transition-all duration-500 ease-in-out scale-100 group-hover:scale-105"
+                    />
+                  </div>
 
-              <span className="font-body text-[8px] py-2 font-bold tracking-[0.2em] text-black/80 block uppercase">
-                Reward for information
-              </span>
-            </div>
-
-            {/* Image Container (Strictly 4:5 Aspect Ratio) */}
-            <div className="relative w-full h-[320px] my-3  shadow-[0_10px_25px_rgba(0,0,0,0.4)] overflow-hidden  rounded">
-              <Image
-                src={member.image}
-                alt={member.name}
-                fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
-                className="object-cover group-hover:grayscale-0  transition-all duration-500 ease-in-out scale-100 group-hover:scale-105"
-              />
-
-              {/* Texture overlay on image */}
-              {/* <div className="absolute inset-0 bg-black/10 mix-blend-overlay pointer-events-none" /> */}
-
-              {/* Anime-Style Slash Overlay (Reveals on Hover) */}
-              {/* <div className="absolute inset-0 bg-[#0D0D0D]/90 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] z-10 flex flex-col justify-between p-4 text-[#E7D2AE]">
-                <div className="absolute inset-0 opacity-15 pointer-events-none" style={{
-                  backgroundImage: "linear-gradient(45deg, #C91A1A 25%, transparent 25%), linear-gradient(-45deg, #C91A1A 25%, transparent 25%)",
-                  backgroundSize: "6px 6px"
-                }} />
-
-                <div className="relative z-10 border-b border-[#F08E2A]/40 pb-2">
-                  <span className="font-display text-xs tracking-wider text-[#F08E2A] uppercase block">
-                    {member.codename}
-                  </span>
-                  <span className="font-body text-[10px] text-[#D9B06A] uppercase block tracking-wider mt-1">
-                    Weapon: {member.weapon}
-                  </span>
-                </div>
-
-                <div className="relative z-10 space-y-2.5 my-auto">
-                  {member.stats.map((stat) => (
-                    <div key={stat.label}>
-                      <div className="flex justify-between text-[10px] font-body uppercase tracking-wider mb-1 text-[#E7D2AE]/80">
-                        <span>{stat.label}</span>
-                        <span className="text-[#F08E2A] font-bold">{stat.value}%</span>
-                      </div>
-                      <div className="w-full h-2 bg-[#0D0D0D] border border-[#8A2C1D]/50 rounded-sm overflow-hidden">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${stat.value}%` }}
-                          transition={{ duration: 0.8, delay: 0.2 }}
-                          className="h-full bg-gradient-to-r from-[#C91A1A] to-[#F08E2A]"
-                        />
+                  {/* Card Footer (Wanted Details) */}
+                  <div className="w-full text-center">
+                    <div className="flex items-center justify-center gap-1.5">
+                      <img className="w-[24px] h-[24px] object-contain" src={gunleft.src} alt="Gun" />
+                      <h3 className="font-display text-base tracking-wide text-black truncate uppercase">
+                        {member.name}
+                      </h3>
+                      <img className="w-[24px] h-[24px] object-contain" src={gunright.src} alt="Gun" />
+                    </div>
+                    
+                    <div className="block mt-1">
+                      <span className="font-body text-[8px] tracking-widest text-black/70 uppercase block leading-none">
+                        BOUNTY
+                      </span>
+                      <div className="mt-1.5 py-1 px-2 rounded border border-black/80 inline-block w-full">
+                        <span className="font-display text-xs sm:text-sm tracking-wider block text-center text-black">
+                          $ {member.bounty}
+                        </span>
                       </div>
                     </div>
-                  ))}
+                  </div>
                 </div>
 
-                <div className="relative z-10 border-t border-[#F08E2A]/40 pt-2 text-center">
-                  <span className="font-display text-[10px] tracking-wider text-[#E7D2AE] block uppercase">
-                    Status: ACTIVE OUTLAW
-                  </span>
+                {/* ── CARD BACK ── */}
+                <div
+                  style={{
+                    backgroundImage: `url(${bgPaper.src})`,
+                    backgroundPosition: "center",
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                  className="absolute inset-0 w-full h-full backface-hidden flex flex-col justify-between md:p-8 p-6 py-8 md:py-10 rounded border-4 double border-black/10 text-black shadow-[0_10px_25px_rgba(0,0,0,0.4)] [transform:rotateY(180deg)]"
+                >
+                  {/* Codename header */}
+                  <div className="w-full text-center border-b-2 border-dashed border-black pb-2">
+                    <div className="flex items-center justify-center gap-2">
+                      <span className="font-display text-3xl tracking-[0.05em] text-black block transform skew-x-[-2deg]  w-full">
+                        {member.fliptitle}
+                      </span>
+                    </div>
+                    <span className="font-body text-[8px] font-bold tracking-[0.2em] text-[#C91A1A] block uppercase mt-0.5">
+                      {member.codename}
+                    </span>
+                  </div>
+
+                  {/* Flip character image container */}
+                  <div className="relative w-full flex-1 min-h-0 my-3 overflow-hidden flex items-center justify-center">
+                    <img
+                      src={member.flipImage.src}
+                      alt={`Flip ${member.name}`}
+                      className="max-w-full max-h-full object-contain filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.5)] transform transition-transform duration-500 ease-out group-hover:scale-105"
+                    />
+                  </div>
+
+                  {/* Description Footer */}
+                  <div className="w-full text-center mt-2 pt-2 border-t border-dashed border-black/30">
+                    <p className="font-body text-[10px] sm:text-xs text-black/90 font-medium tracking-wide uppercase leading-relaxed max-w-xs mx-auto">
+                      {member.description}
+                    </p>
+                  </div>
                 </div>
-              </div> */}
-            </div>
-
-            {/* Card Footer (Wanted Details) */}
-            <div className="w-full text-center mt-3 pt-1 z-0">
-
-              <div className="flex items-center justify-center gap-2">
-                <Image className="w-[30px] h-[30px] object-contain" src={gunleft} alt="Gun" width={35} height={35} />
-                <h3 className="font-display text-lg tracking-wide text-black truncate uppercase">
-                  {member.name}
-                </h3>
-                <Image className="w-[30px] h-[30px] object-contain" src={gunright} alt="Gun" width={35} height={35} />
 
               </div>
-
-              {/* <p className="font-body text-[9px] text-[#8A2C1D] font-bold tracking-wider uppercase truncate mt-0.5">
-                {member.role}
-              </p> */}
-              <div className="block">
-                <span className="font-body text-[9px] tracking-widest text-black uppercase block leading-none">
-                BOUNTY
-              </span>
-              {/* Bounty Display */}
-              <div className="mt-2.5  hover:scale-105 transition duration-200 ease text-black py-3 px-2 rounded border border-black inline-block w-full">
-
-                <span className="font-display text-sm tracking-wider block mt-0.5 text-center text-black">
-                  $ {member.bounty}
-                </span>
-              </div>
-              </div>
-            </div>
+            </a>
           </motion.div>
-         </a>
         ))}
       </div>
 

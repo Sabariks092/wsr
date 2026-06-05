@@ -52,7 +52,7 @@ const episodesList: Episode[] = [
 
 export default function Episodes() {
     return (
-        <section id="episodes" className="relative w-full bg-[#0D0D0D] py-20 px-6 md:px-12 overflow-hidden flex flex-col justify-center border-t border-[#8A2C1D]/20">
+        <section id="episodes" className="relative w-full bg-[#0D0D0D] md:py-20 py-4 px-6 md:px-12 overflow-hidden flex flex-col justify-center border-t border-[#8A2C1D]/20">
             {/* Background aesthetic textures */}
             <div className="absolute inset-0 bg-gradient-to-b from-[#0D0D0D] via-[#1A0A05] to-[#0D0D0D] pointer-events-none z-0" />
             <div className="dust-overlay z-10" />
@@ -62,11 +62,11 @@ export default function Episodes() {
             <div className="relative w-full container mx-auto z-20 px-2 flex flex-col space-y-12">
 
                 {/* Section Header */}
-                <div className="text-center border-b border-[#8A2C1D]/40 pb-6">
+                <div className="text-center pb-4">
                     <span className="text-desert-orange font-display text-xs sm:text-sm tracking-[0.3em] uppercase block mb-3 text-shadow-cinematic">
                         Most Played Dispatches
                     </span>
-                    <h2 className="font-display text-4xl sm:text-4xl md:text-5xl text-vintage-beige tracking-[0.05em] uppercase text-shadow-gold">
+                    <h2 className="font-display text-3xl sm:text-3xl md:text-5xl text-vintage-beige tracking-[0.05em] uppercase text-shadow-gold">
                         Top Streamed Episodes
                     </h2>
                 </div>

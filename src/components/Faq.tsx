@@ -10,11 +10,14 @@ import faqCoins from "@/app/assets/images/faq/faq_coins.png";
 import faqBook from "@/app/assets/images/faq/faq_book.png";
 import faqCactus from "@/app/assets/images/faq/faq_cactus.png";
 
+import template from "@/app/assets/images/faq/template.png";
+
 interface FaqItem {
   id: number;
   question: string;
   answer: string;
   image: any;
+  template: any;
 }
 
 const faqList: FaqItem[] = [
@@ -23,29 +26,33 @@ const faqList: FaqItem[] = [
     question: "Neenga UP ah ?",
     answer: "ama da ippo enna ?",
     image: faqWanted,
+    template: template
   },
   {
     id: 2,
     question: "Enna Bro, paytm la 200 credit aagiducha ?",
     answer: "ama da ippo enna ?",
     image: faqCoins,
+    template: template
   },
   {
     id: 3,
     question: "Bro Neenga Peryarist/Marxist/Ambetkarite ah ?",
     answer: "ama da ippo enna ?",
     image: faqBook,
+    template: template
   },
   {
     id: 4,
     question: "Neenga Anti Brahmanism/RSS/BJP ah ?",
     answer: "ama da ippo enna ?.",
     image: faqCactus,
+    template: template
   },
 ];
 
 export default function Faq() {
-  const [activeId, setActiveId] = useState<number | null>(1);
+  const [activeId, setActiveId] = useState<number | null>();
   const [lastImage, setLastImage] = useState<any>(faqWanted);
 
   const handleToggle = (item: FaqItem) => {
@@ -54,7 +61,7 @@ export default function Faq() {
   };
 
   return (
-    <section id="faq" className="relative w-full bg-[#0D0D0D] py-20 pb-32 px-6 md:px-12 overflow-hidden flex flex-col justify-center border-t border-[#8A2C1D]/20">
+    <section id="faq" className="relative w-full bg-[#0D0D0D] py-6 md:py-20 pb-16 md:pb-32 px-6 md:px-12 overflow-hidden flex flex-col justify-center border-t border-[#8A2C1D]/20">
       {/* Background aesthetic textures */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0D0D0D] via-[#1A0A05] to-[#0D0D0D] pointer-events-none z-0" />
       <div className="dust-overlay z-10" />
@@ -69,7 +76,7 @@ export default function Faq() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative w-full h-[350px] sm:h-[450px] md:h-[500px] p-10 rounded border-4 double border-[#8A2C1D] overflow-hidden bg-[#0D0D0D] shadow-[0_15px_40px_rgba(0,0,0,0.5)]"
+          className="relative md:order-1 order-2 w-full h-[350px] sm:h-[450px] md:h-[500px] p-10 rounded border-4 double border-[#8A2C1D] overflow-hidden bg-[#0D0D0D] shadow-[0_15px_40px_rgba(0,0,0,0.5)]"
         >
           <AnimatePresence mode="wait">
             <motion.div
@@ -100,13 +107,13 @@ export default function Faq() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col space-y-6"
+          className="flex flex-col md:order-2 order-1 space-y-6"
         >
           <div>
             <span className="text-desert-orange font-display text-xs sm:text-sm tracking-[0.3em] uppercase block mb-3 text-shadow-cinematic">
               Frequently Accused Dispatches
             </span>
-            <h2 className="font-display text-4xl sm:text-4xl md:text-5xl text-vintage-beige tracking-[0.05em] uppercase text-shadow-gold pb-4 border-b border-[#8A2C1D]/40">
+            <h2 className="font-display text-3xl sm:text-3xl md:text-5xl text-vintage-beige tracking-[0.05em] uppercase text-shadow-gold pb-4 border-b border-[#8A2C1D]/40">
               Outlaw FAQ
             </h2>
           </div>
@@ -133,11 +140,17 @@ export default function Faq() {
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
-                      className="overflow-hidden"
+                      className="overflow-hidden p-6"
                     >
-                      <p className="mt-4 font-body text-xs sm:text-sm text-vintage-beige/60 leading-relaxed uppercase tracking-[0.06em]">
+                      {/* <p className="mt-4 font-body text-xs sm:text-sm text-vintage-beige/60 leading-relaxed uppercase tracking-[0.06em]">
                         {item.answer}
-                      </p>
+                      </p> */}
+                      <Image 
+                        src={item.template}
+                        alt="Wild South Raiders FAQ Visual"
+                        className="w-full  border-3 border-white/30"
+                        priority
+                      />
                     </motion.div>
                   )}
                 </AnimatePresence>

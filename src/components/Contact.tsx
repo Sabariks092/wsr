@@ -86,7 +86,7 @@ export default function Contact() {
 
           <div>
 
-            <h2 className="font-display text-4xl sm:text-4xl md:text-5xl text-vintage-beige tracking-[0.05em] uppercase text-shadow-gold pb-4 ">
+            <h2 className="font-display text-3xl sm:text-3xl md:text-5xl text-vintage-beige tracking-[0.05em] uppercase text-shadow-gold pb-4 ">
               Get in Touch
             </h2>
           </div>
@@ -113,14 +113,14 @@ export default function Contact() {
             {/* <span className="text-desert-orange font-display text-xs sm:text-sm tracking-[0.3em] uppercase block mb-3 text-shadow-cinematic">
               Follow Our Dispatches
             </span> */}
-            <div className="flex flex-wrap gap-4 items-center">
+            <div className="flex  gap-4 items-center justify-start">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="relative w-24 h-24 bg-black/40 border border-[#8A2C1D]/40 rounded-lg flex items-center justify-center shadow-lg hover:scale-110 hover:border-[#D9B06A] transition-all duration-300 group"
+                  className="relative md:w-24 w-12 h-12 md:h-24 bg-black/40 border border-[#8A2C1D]/40 rounded-lg flex items-center justify-center shadow-lg hover:scale-110 hover:border-[#D9B06A] transition-all duration-300 group"
                   title={social.name}
                 >
                   <Image

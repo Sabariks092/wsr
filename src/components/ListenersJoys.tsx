@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Quote, ChevronLeft, ChevronRight, Star } from "lucide-react";
 
@@ -60,15 +60,38 @@ stars:4
 export default function ListenersJoys() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // We have 6 testimonials. If we display 3 on desktop, the maximum index is total - 3 (which is 3).
-  // On tablet we show 2, max index is total - 2.
-  // On mobile we show 1, max index is total - 1.
+  const [columns, setColumns] = useState(3);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setColumns(1);
+      } else if (window.innerWidth < 1024) {
+        setColumns(2);
+      } else {
+        setColumns(3);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Prevent slider index from overflowing when viewport changes sizes
+  useEffect(() => {
+    const maxIndex = testimonials.length - columns;
+    if (currentIndex > maxIndex) {
+      setCurrentIndex(Math.max(0, maxIndex));
+    }
+  }, [columns, currentIndex]);
+
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? testimonials.length - 3 : prev - 1));
+    setCurrentIndex((prev) => (prev === 0 ? testimonials.length - columns : prev - 1));
   };
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev >= testimonials.length - 3 ? 0 : prev + 1));
+    setCurrentIndex((prev) => (prev >= testimonials.length - columns ? 0 : prev + 1));
   };
 
   return (
@@ -87,7 +110,7 @@ export default function ListenersJoys() {
             <span className="text-desert-orange font-display text-xs sm:text-sm tracking-[0.3em] uppercase block mb-3 text-shadow-cinematic">
               Voice of the Frontier
             </span>
-            <h2 className="font-display text-4xl sm:text-4xl md:text-5xl text-vintage-beige tracking-[0.05em] uppercase text-shadow-gold">
+            <h2 className="font-display text-3xl sm:text-3xl md:text-5xl text-vintage-beige tracking-[0.05em] uppercase text-shadow-gold">
               Listeners Joys
             </h2>
           </div>
@@ -116,9 +139,8 @@ export default function ListenersJoys() {
           <motion.div
             className="flex gap-6 transition-transform duration-500 ease-out"
             style={{
-              // On desktop (3 cols): translate by currentIndex * (1/3 of container width + gap spacing)
-              // We implement the sliding animation by animating translateX
-              transform: `translateX(calc(-${currentIndex * 33.333}% - ${currentIndex * 16}px))`,
+              // Translate dynamically based on column count and index
+              transform: `translateX(calc(-${currentIndex} * (100% + 24px) / ${columns}))`,
             }}
           >
             {/* Render all 6 testimonials in a row */}

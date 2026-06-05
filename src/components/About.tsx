@@ -8,7 +8,7 @@ import { BicepsFlexed } from "lucide-react";
 
 export default function About() {
   return (
-    <section id="about" className="relative w-full bg-[#0D0D0D] pb-16  pt-32 px-6 md:px-12 overflow-hidden flex flex-col justify-center">
+    <section id="about" className="relative w-full bg-[#0D0D0D] pb-8 md:pb-16  pt-12 md:pt-32 px-6 md:px-12 overflow-hidden flex flex-col justify-center">
       {/* Background aesthetic textures */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0D0D0D] via-[#1A0A05] to-[#0D0D0D] pointer-events-none z-0" />
       <div className="dust-overlay z-10" />
@@ -23,7 +23,7 @@ export default function About() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative w-full h-full p-10 rounded border-4 double border-[#8A2C1D] overflow-hidden bg-[#0D0D0D] shadow-[0_15px_40px_rgba(0,0,0,0.5)]"
+          className="relative w-full h-full p-10 md:block hidden rounded border-4 double border-[#8A2C1D] overflow-hidden bg-[#0D0D0D] shadow-[0_15px_40px_rgba(0,0,0,0.5)]"
         >
           <Image 
             src={about}
